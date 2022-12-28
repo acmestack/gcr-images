@@ -4,9 +4,13 @@
 - kube-rbac-proxy
 - kube-webhook-certgen
 
+## pull images
+
+`docker pull acmestack/image:tag`
+
 images structure
 
-```base
+```bash
 ├── images
 │   ├── admission-server
 │   │   ├── Dockerfile
