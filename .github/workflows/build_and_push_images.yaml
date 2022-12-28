@@ -1,0 +1,28 @@
+name: Build and Push Images
+on:
+  push:
+    branches:
+    - "main"
+    paths-ignore:
+    - "**/*.png"
+  pull_request:
+    branches:
+    - "main"
+    paths-ignore:
+    - "**/*.png"
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    # build and push image
+    - name: Login to DockerHub
+      if: github.event_name == 'push'
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+    - name: Build and Push Commit Image
+      if: github.event_name == 'push'
+      run: sh push-images.sh
