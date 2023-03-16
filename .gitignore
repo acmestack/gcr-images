@@ -1,0 +1,9 @@
+.DS_Store
+:x
+# Intellij
+*.iml
+.idea/
+
+# Visual Studio Code
+.vscode/
+
