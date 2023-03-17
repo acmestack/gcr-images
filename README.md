@@ -41,5 +41,5 @@
 
 ### push policy
 
-- skip: image exist, so skip push image.(default)
+- (default)skip: if image exist so skip push image, the image is not exist push it.
 - override: image exist but override it.
