@@ -27,17 +27,19 @@
 ├── images
 │   ├── admission-server
 │   │   ├── Dockerfile
-│   │   ├── name
-│   │   └── tag
+│   │   └── nametag
 │   ├── kube-rbac-proxy
 │   │   ├── Dockerfile
-│   │   ├── name
-│   │   └── tag
+│   │   └── nametag
 │   └── kube-webhook-certgen
 │       ├── Dockerfile
-│       ├── name
-│       └── tag
+│       ├── nametag
+│       └── policy
 ```
+
+### nametag
+
+eg: admission-server:v0.6.1
 
 ### push policy
 
