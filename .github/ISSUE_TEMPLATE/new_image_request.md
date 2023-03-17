@@ -18,7 +18,7 @@ assignees: ''
 > image push policy:
 >
 > - (default)skip: If the image already exists skip it, otherwise push it.
-> - override: image exist but override it.
+> - override: the image already exists but override it.
 
 ## new image
 
