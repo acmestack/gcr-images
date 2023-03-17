@@ -1,27 +1,17 @@
 # gcr.io image sync
 
-## gcr.io
+## images sync introduction
 
-- admission-server
-- kube-rbac-proxy
-- kube-webhook-certgen
-- echoserver
+### nametag
 
-## envoy
+eg: admission-server:v0.6.1
 
-- envoy
-- gateway
+### push policy
 
-## others
+- (default)skip: If the image already exists skip it, otherwise push it.
+- override: image exist but override it.
 
-- python-jq: python3 with jq
-- python-fat: python3 with jq and curl
-
-## pull images
-
-`docker pull acmestack/image:tag`
-
-## images structure
+### images directory
 
 ```bash
 ├── images
@@ -37,11 +27,25 @@
 │       └── policy
 ```
 
-### nametag
+## images
 
-eg: admission-server:v0.6.1
+### gcr.io
 
-### push policy
+- admission-server
+- kube-rbac-proxy
+- kube-webhook-certgen
+- echoserver
 
-- (default)skip: if image exist so skip push image, the image is not exist push it.
-- override: image exist but override it.
+### envoyproxy
+
+- envoy
+- gateway
+
+### others
+
+- python-jq: python3 with jq
+- python-fat: python3 with jq and curl
+
+## pull images
+
+`docker pull acmestack/nametag`
