@@ -38,3 +38,8 @@
 │       ├── name
 │       └── tag
 ```
+
+### push policy
+
+- skip: image exist, so skip push image.(default)
+- override: image exist but override it.
