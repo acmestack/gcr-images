@@ -14,22 +14,13 @@ do
         cd `echo $image`
         echo "processing image "$image
         echo "🦁"
-        skip_image="true"
-        for item in `ls $dir`
-        do
-            formart_last_date=$(git log -1 --format="%at" $item | xargs -I{} date -d @{} +%Y-%m-%d)
-            echo "$image/$item last modify date $formart_last_date"
-            if [ "$formart_last_date" = "$current_date" ]; then
-                skip_image="false"
-                break
-            fi                
-        done
-        if [ "$skip_image" = "true" ]; then
+        exist=$(curl --head https://hub.docker.com/v2/namespaces/acmestack/repositories/`cat name`/tags/`cat tag` --header 'application/json' -o /dev/null -s -w %{http_code})
+        if [ "$exist" = "200" || "$exist" = "403"  ]; then
             echo "$image pushed, skip..."
             cd ..
             continue
         fi
-        echo "building $image"
+        echo "building $image for status $exist"
         docker buildx build --push --platform linux/amd64,linux/arm64 -t acmestack/`cat name`:`cat tag` .
         cd ..
     fi
