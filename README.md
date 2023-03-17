@@ -9,7 +9,7 @@ eg: admission-server:v0.6.1
 ### image push policy
 
 - (default)skip: If the image already exists skip it, otherwise push it.
-- override: image exist but override it.
+- override: the image already exist but override it.
 
 ### images directory
 
