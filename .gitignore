@@ -1,10 +1,7 @@
+.vscode
+.env
+*~
 .DS_Store
-:x
-# Intellij
-*.iml
-.idea/
-
-# Visual Studio Code
-.vscode/
-
+._.DS_Store
+._*
 .history
