@@ -16,9 +16,9 @@ RUN apk update && \
         py3-pip \
         sqlite \
         # 如果需要编译Python扩展，可能需要以下包
-        # python3-dev \
-        # gcc \
-        # musl-dev \
+        python3-dev \
+        gcc \
+        musl-dev \
         && \
     # 验证版本
     python3 --version && \
