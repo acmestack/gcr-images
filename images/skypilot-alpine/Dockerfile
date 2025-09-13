@@ -19,7 +19,10 @@ RUN apk update && \
         python3-dev \
         gcc \
         musl-dev \
+	linux-headers \
         && \
+    # 删除验证
+    rm -f /usr/lib/python*/EXTERNALLY-MANAGED && \
     # 验证版本
     python3 --version && \
     sqlite3 --version
